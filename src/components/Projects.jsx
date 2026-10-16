@@ -6,7 +6,7 @@ const projects = [
     title: 'Chatapp',
     desc: 'A real-time chat application built with React (Vite) and Firebase for seamless communication. It supports secure Email/Password login and Continue with Google (OAuth 2.0) authentication. Users can search for registered members and chat in real-time using Firebase Firestore. A fast, responsive, and production-ready chat solution with reliable data sync.',
     tech: ['Html', 'Css', 'JavaScript', 'Firebase', 'React', 'Vite'],
-    github: 'https://github.com/Harshsharma90/talktalk',
+    github: 'https://github.com/Harshsharma90/BaatCheet',
     live: 'https://baatcheet2.vercel.app/',
     num: '01',
     featured: true,
