@@ -1,0 +1,207 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  overflow: hidden;
+}
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.noise {
+  position: absolute;
+  inset: -200%;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grain 0.5s steps(1) infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+.wave { font-size: 1.2rem; animation: float 2s ease-in-out infinite; }
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+}
+.name_main {
+  background: linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.name_dot { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+
+.role {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+  min-height: 2rem;
+}
+.role_prefix { color: var(--accent2); }
+.role_text { color: var(--text); }
+.cursor_blink {
+  color: var(--accent);
+  animation: blink 0.8s step-end infinite;
+  margin-left: 1px;
+}
+
+.bio {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.btn_primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.85rem 1.75rem;
+  background: var(--accent);
+  color: #000;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.25s;
+  cursor: none;
+}
+.btn_primary:hover {
+  background: #7fe8bc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,220,169,0.35);
+}
+.btn_secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.25s;
+}
+.btn_secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  transition: all 0.25s;
+}
+.social:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(99,220,169,0.2);
+}
+
+.scroll_hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  animation: fadeIn 1s ease 1.5s both;
+}
+.scroll_line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: float 2s ease-in-out infinite;
+}
+.scroll_hint span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.badge_float {
+  position: absolute;
+  right: 6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+.badge_ring {
+  position: relative;
+  width: 120px; height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge_text_svg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  animation: spin-slow 12s linear infinite;
+}
+.badge_center {
+  width: 50px; height: 50px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .badge_float { display: none; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 6rem 1.5rem 4rem; align-items: flex-start; }
+}

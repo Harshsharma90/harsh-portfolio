@@ -1,0 +1,96 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  transition: all 0.4s ease;
+}
+.scrolled {
+  background: rgba(8,10,15,0.85);
+  backdrop-filter: blur(20px);
+  padding: 1rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  cursor: none;
+  letter-spacing: -0.02em;
+}
+.logo_bracket { color: var(--accent); }
+.logo_name { color: var(--text); margin: 0 2px; }
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+.links button {
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  transition: color 0.2s;
+  cursor: none;
+}
+.links button:hover { color: var(--accent); }
+.num { color: var(--accent); margin-right: 4px; font-size: 0.75rem; }
+
+.cta {
+  margin-left: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  transition: all 0.25s;
+}
+.cta:hover {
+  background: rgba(99,220,169,0.1);
+  box-shadow: 0 0 20px rgba(99,220,169,0.2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  cursor: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text);
+  transition: all 0.3s;
+  transform-origin: center;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav { padding: 1.25rem 1.5rem; }
+  .hamburger { display: flex; }
+  .links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--bg2);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-left: 1px solid var(--border);
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .links.open { right: 0; }
+  .links button { font-size: 1rem; }
+  .cta { margin-left: 0; }
+}
