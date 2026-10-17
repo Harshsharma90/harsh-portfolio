@@ -4,7 +4,7 @@ import styles from './Projects.module.css'
 const projects = [
   {
     title: 'Chatapp',
-    desc: 'A real-time chat application built with React (Vite) and Firebase for seamless communication. It supports secure Email/Password login and Continue with Google (OAuth 2.0) authentication. Users can search for registered members and chat in real-time using Firebase Firestore. A fast, responsive, and production-ready chat solution with reliable data sync.',
+    desc: 'BaatCheet is a full-stack, real-time chat application built with React, Node.js, Express, and PostgreSQL, inspired by WhatsApp. The app supports secure email/password authentication with JWT and bcrypt, a forgot-password flow with time-limited reset tokens delivered via transactional email, and a friend system where users can search for others by email, send connection invites, and automatically email an invite link to anyone not yet registered. Real-time messaging is powered by Socket.IO, including instant message delivery, typing indicators, online/offline presence, and read receipts, alongside image and file sharing and browser notifications for new messages. The project was originally prototyped on a serverless backend and later migrated to a custom Node.js/Express REST API with a PostgreSQL database to gain full control over the data model and real-time behavior, and is deployed with a GitHub-driven CI/CD pipeline that automatically redeploys the backend on Render and the frontend on Vercel whenever new code is pushed.',
     tech: ['Html', 'Css', 'JavaScript', 'Firebase', 'React', 'Vite'],
     github: 'https://github.com/Harshsharma90/BaatCheet',
     live: 'https://baatcheet2.vercel.app/',
