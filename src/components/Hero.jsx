@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './Hero.module.css'
-import resumePDF from '../assets/Harsh_Sharma_Resume.pdf'
+import resumePDF from '../assets/Harsh_Resume_Final.pdf'
 
 const roles = ['MERN Stack Developer', 'React Specialist', 'Node.js Engineer', 'Full Stack Builder']
 
